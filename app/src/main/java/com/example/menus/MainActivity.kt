@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
             emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear sir i was applying for a post at your company")
             startActivity(Intent.createChooser(emailIntent, "send email"))
 
+        }
+        btnCamera.setOnClickListener {
+            val takePictureIntent: = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(takePictureIntent, 1)
         }
     }
 }
