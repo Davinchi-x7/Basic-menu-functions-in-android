@@ -47,8 +47,12 @@ class MainActivity : AppCompatActivity() {
 
         }
         btnCamera.setOnClickListener {
-            val takePictureIntent: = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureIntent, 1)
+        }
+        btnMpesa.setOnClickListener {
+            val simToolkitIntent = applicationContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+            simToolkitIntent?.let { startActivity(it) }
         }
     }
 }
