@@ -54,5 +54,10 @@ class MainActivity : AppCompatActivity() {
             val simToolkitIntent = applicationContext.packageManager.getLaunchIntentForPackage("com.android.stk")
             simToolkitIntent?.let { startActivity(it) }
         }
+
+        btnWeb.setOnClickListener{
+            val gotoanotheractivity = Intent(this, Website_activity::class.java)
+            startActivity(gotoanotheractivity)
+        }
     }
 }
